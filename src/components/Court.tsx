@@ -10,8 +10,8 @@ const Court: React.FC<CourtProps> = ({
 }) => {
     const [rotationIndex, setRotationIndex] = useState(0);
     const [rotation, setRotation] = useState<{ id: number; x: number; y: number }[]>([]);
-    const [width, setWidth] = useState(Math.round(size * 1));
-    const [height, setHeight] = useState(size);
+    const width = Math.round(size * 1);
+    const height = (size);
     const [rotationType, setRotationType] = useState("base");
 
 	const rotatePlayersHandler = () => {
@@ -130,7 +130,7 @@ const Court: React.FC<CourtProps> = ({
                     />
 
                     { 
-                    rotation.map((pos, index) => {
+                    rotation.map((_, index) => {
                         const currentIdx = (index - rotationIndex + players.length) % players.length;
                         console.log('CurrentIdx:', rotation[currentIdx]);
                         let asd = rotation[currentIdx];
